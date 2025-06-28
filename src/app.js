@@ -14,4 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"))
 
-export default app ;
+// Import routes
+import healthcheckRouter from './routes/Health.route.js';
+
+// routes
+app.use("/api/v1/healthcheck", healthcheckRouter);
+
+export default app;
